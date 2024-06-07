@@ -39,7 +39,7 @@ namespace WpfApp1
             UpdateDataCommand = new RelayCommand(_ => UpdateData());
         }
 
-      
+
 
         private void UpdateData()
         {
@@ -56,8 +56,23 @@ namespace WpfApp1
                 }
                 newPlotData.Add(newData);
             }
-              PlotData = newPlotData;
+            PlotData = newPlotData;
         }
+        //    private void UpdateData()
+        //{
+        //    Random rand = new Random();
+        //    var updatedData = new ObservableCollection<double[]>();
 
+        //    foreach (var series in PlotData)
+        //    {
+        //        var dataList = new List<double>(series)
+        //        {
+        //            rand.NextDouble() * 10 // 增加一个随机点
+        //        };
+        //        updatedData.Add(dataList.ToArray());
+        //    }
+
+        //    PlotData = updatedData;
+        //}
     }
 }

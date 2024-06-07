@@ -23,8 +23,9 @@ namespace WpfApp1
     {
         public ObservableCollection<double[]> DataSeries
         {
-            get { return (ObservableCollection<double[]>)GetValue(DataSeriesProperty);}
-            set { 
+            get { return (ObservableCollection<double[]>)GetValue(DataSeriesProperty); }
+            set
+            {
                 SetValue(DataSeriesProperty, value);
                 if (value != null)
                 {
@@ -35,7 +36,7 @@ namespace WpfApp1
         public static readonly DependencyProperty DataSeriesProperty =
         DependencyProperty.Register("DataSeries", typeof(ObservableCollection<double[]>), typeof(PlotControl), new PropertyMetadata(new ObservableCollection<double[]>(), OnDataSeriesChanged));
         //public static readonly DependencyProperty DataSeriesProperty =
-        // DependencyProperty.Register("DataSeries", typeof(ObservableCollection<double[]>), typeof(PlotControl), new PropertyMetadata(new ObservableCollection<double[]>()));
+        //           DependencyProperty.Register("DataSeries", typeof(ObservableCollection<double[]>), typeof(PlotControl), new PropertyMetadata(new ObservableCollection<double[]>()));
         private static void OnDataSeriesChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             if (d is PlotControl control && e.NewValue is ObservableCollection<double[]> newSeries)
